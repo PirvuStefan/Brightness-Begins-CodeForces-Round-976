@@ -3,8 +3,14 @@
 #include <algorithm>
 #include<cmath>
 using namespace std;
-long long count(long long b) {
-    return floor(sqrtl(b));
+long long countSquares(long long a, long long b) {
+    long long start = ceil(sqrtl(a));
+     long long end = floor(sqrtl(b));
+     
+     if (end >= start) {
+         return end - start + 1;
+     }
+     return 0;
 }
 int main() {
     long long t;
@@ -19,7 +25,7 @@ int main() {
         cin>>k;
         long long n = k + 1;
 
-        long long number = n - count(n); //on bulbs
+        long long number = n - countSquares(1,n); //on bulbs
                                 //count(n) = off bulbs
             //k - number    how many we need to reach k == n
             
@@ -29,4 +35,3 @@ int main() {
     }
     return 0;
 }
-
