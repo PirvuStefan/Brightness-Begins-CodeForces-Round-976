@@ -22,13 +22,14 @@ int main() {
     //The final state of the 𝑖th bulb tells us about the parity of number of divisors of 𝑖
                  //  even => off
                 //   odd  => on
-
+    // only perfect squares have the parity even
     for(int p=1;p<=t;p++){
         long long k;
         cin>>k;
         long long n = k + 1;
 
         long long number = n - count(n); //on bulbs
+                                //count(n) = off bulbs
             //k - number    how many we need to reach k == n
             
                 n = n + (k - number) + countSquares(n+1,n+k-number);
